@@ -15,7 +15,8 @@ try {
   if (existing) {
     const updated = await Valentine.findOneAndUpdate(
       { email: emial },
-      { message: req.body.message },  
+      { message: req.body.message },
+      { image: req.body.image },
       { new: true }
     );
     return res.status(200).json({ message: '💌 Valentine updated', data: updated, success: true });
